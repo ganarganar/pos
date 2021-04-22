@@ -63,7 +63,7 @@ Contributors
   * Lucas Soto <lsoto@ganargan.ar>
   * Leandro Ramírez <lramirez@ganargan.ar>
 
-* `IT Projects LLC:
+* IT Projects LLC:
 
   * Ivan Yelizariev
 
