@@ -1,6 +1,6 @@
-==============================
-Point Of Sale eInvoice Receipt
-==============================
+========================
+Point Of Sale Debranding
+========================
 
 .. |badge1| image:: https://img.shields.io/badge/maturity-Production%2FStable-green.png
     :target: https://odoo-community.org/page/development-status
