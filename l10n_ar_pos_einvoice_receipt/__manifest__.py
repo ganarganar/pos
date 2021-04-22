@@ -37,6 +37,6 @@
     "qweb": [
         "static/src/xml/pos.xml"
     ],
-    "website": "https://github.com/ganar-gan-ar/pos",
+    "website": "https://github.com/ganarganar/pos",
     "installable": True
 }
