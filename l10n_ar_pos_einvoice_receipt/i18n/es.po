@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-21 19:15+0000\n"
-"PO-Revision-Date: 2021-04-21 16:25-0300\n"
+"POT-Creation-Date: 2021-04-22 13:22+0000\n"
+"PO-Revision-Date: 2021-04-22 10:26-0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -114,6 +114,11 @@ msgid "Discount:"
 msgstr "Descuento:"
 
 #. module: l10n_ar_pos_einvoice_receipt
+#: model_terms:ir.ui.view,arch_db:l10n_ar_pos_einvoice_receipt.pos_config_view_form
+msgid "Download a PDF copy of the generated invoice"
+msgstr "Descargar una copia de la factura generada en PDF"
+
+#. module: l10n_ar_pos_einvoice_receipt
 #. openerp-web
 #: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
 #, python-format
@@ -128,8 +133,13 @@ msgid "G.I.I.:"
 msgstr "I.I.B.B.:"
 
 #. module: l10n_ar_pos_einvoice_receipt
+#: model:ir.model.fields,help:l10n_ar_pos_einvoice_receipt.field_pos_config__pdf_invoice_download
+msgid "If checked, a PDF copy of the invoice will be downloaded"
+msgstr "Si está tildado, una copia PDF de la factura será descargada"
+
+#. module: l10n_ar_pos_einvoice_receipt
 #: model:ir.model.fields,help:l10n_ar_pos_einvoice_receipt.field_pos_config__invoice_by_default
-msgid "If checked, sales will be invoiced by default."
+msgid "If checked, sales will be invoiced by default"
 msgstr "Si está tildado, las ventas serán facturadas por defecto."
 
 #. module: l10n_ar_pos_einvoice_receipt
@@ -155,6 +165,12 @@ msgstr "Hacer \"Factura\" seleccionado por defecto en la página de pago"
 #, python-format
 msgid "Nbr.:"
 msgstr "Nº.:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model:ir.model.fields,field_description:l10n_ar_pos_einvoice_receipt.field_pos_config__pdf_invoice_download
+#: model_terms:ir.ui.view,arch_db:l10n_ar_pos_einvoice_receipt.pos_config_view_form
+msgid "PDF invoice download"
+msgstr "Descargar factura PDF"
 
 #. module: l10n_ar_pos_einvoice_receipt
 #. openerp-web

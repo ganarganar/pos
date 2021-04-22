@@ -11,8 +11,13 @@ class pos_config(models.Model):
 
     invoice_by_default = fields.Boolean(
         "Automatic invoicing",
-        help="If checked, sales will be invoiced by default.",
+        help="If checked, sales will be invoiced by default",
         default=True
+    )
+    pdf_invoice_download = fields.Boolean(
+        "PDF invoice download",
+        help="If checked, a PDF copy of the invoice will be downloaded",
+        default=False
     )
     show_cashier_info = fields.Boolean(
         "Show cashier info",

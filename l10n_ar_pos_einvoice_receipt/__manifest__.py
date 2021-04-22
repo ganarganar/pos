@@ -22,7 +22,7 @@
     "name": "Point Of Sale eInvoice Receipt",
     "summary": """Allows to print receipts as electronic invoices.""",
     "license": "AGPL-3",
-    "version": "13.0.1.0.0",
+    "version": "13.0.1.1.0",
     "author": "Ganar Ganar",
     "support": "soporte@ganargan.ar",
     "category": "Point of sale",
