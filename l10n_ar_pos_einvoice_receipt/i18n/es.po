@@ -1,0 +1,259 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ar_pos_einvoice_receipt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-21 19:15+0000\n"
+"PO-Revision-Date: 2021-04-21 16:25-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: \n"
+"Language: es\n"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "- Cod."
+msgstr "- Cód."
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "AMOUNT"
+msgstr "IMPORTE"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Activities start:"
+msgstr "Inicio de actividades:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Address:"
+msgstr "Dirección:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Authorized voucher"
+msgstr "Comprobante autorizado"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model:ir.model.fields,field_description:l10n_ar_pos_einvoice_receipt.field_pos_config__invoice_by_default
+msgid "Automatic invoicing"
+msgstr "Facturación automática"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "C.A.E. Due:"
+msgstr "Vencimiento de C.A.E.:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "C.A.E.:"
+msgstr "C.A.E.:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Change"
+msgstr "Cambio"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Company registry:"
+msgstr "Registro de compañía:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Customer:"
+msgstr "Cliente:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "DESCRIPTION"
+msgstr "DESCRIPCIÓN"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Date:"
+msgstr "Fecha:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Discount:"
+msgstr "Descuento:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "E-mail:"
+msgstr "E-mail:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "G.I.I.:"
+msgstr "I.I.B.B.:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model:ir.model.fields,help:l10n_ar_pos_einvoice_receipt.field_pos_config__invoice_by_default
+msgid "If checked, sales will be invoiced by default."
+msgstr "Si está tildado, las ventas serán facturadas por defecto."
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model_terms:ir.ui.view,arch_db:l10n_ar_pos_einvoice_receipt.pos_config_view_form
+msgid "Invoice by default"
+msgstr "Facturar por defecto"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model_terms:ir.ui.view,arch_db:l10n_ar_pos_einvoice_receipt.pos_config_view_form
+msgid "Make \"Invoice\" checked by default on payment screen"
+msgstr "Hacer \"Factura\" seleccionado por defecto en la página de pago"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Nbr.:"
+msgstr "Nº.:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Phone:"
+msgstr "Teléfono:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model:ir.model,name:l10n_ar_pos_einvoice_receipt.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Configuración del punto de venta"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "QTY. x UNIT PR."
+msgstr "CANT. x PR. UNIT."
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Served by"
+msgstr "Atendido por"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model:ir.model.fields,field_description:l10n_ar_pos_einvoice_receipt.field_pos_config__show_cashier_info
+#: model_terms:ir.ui.view,arch_db:l10n_ar_pos_einvoice_receipt.pos_config_view_form
+msgid "Show cashier info"
+msgstr "Mostrar información del cajero"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model_terms:ir.ui.view,arch_db:l10n_ar_pos_einvoice_receipt.pos_config_view_form
+msgid "Show cashier name on ticket"
+msgstr "Mostrar nombre del cajero en el ticket"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model:ir.model.fields,field_description:l10n_ar_pos_einvoice_receipt.field_pos_config__show_contact_info
+#: model_terms:ir.ui.view,arch_db:l10n_ar_pos_einvoice_receipt.pos_config_view_form
+msgid "Show contact info"
+msgstr "Mostrar información de contacto"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model:ir.model.fields,field_description:l10n_ar_pos_einvoice_receipt.field_pos_config__show_customer_vat
+msgid "Show customer VAT"
+msgstr "Mostrar C.U.I.T. del cliente"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model_terms:ir.ui.view,arch_db:l10n_ar_pos_einvoice_receipt.pos_config_view_form
+msgid "Show customer's VAT"
+msgstr "Mostrar C.U.I.T. del cliente"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model_terms:ir.ui.view,arch_db:l10n_ar_pos_einvoice_receipt.pos_config_view_form
+msgid "Show customers VAT related info on receipts when \"Invoice\" checked"
+msgstr "Mostrar información relacionada con el C.U.I.T. del cliente en los tickets cuando \"Facturar\" está seleccionado"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model:ir.model.fields,field_description:l10n_ar_pos_einvoice_receipt.field_pos_config__show_invoice_number
+#: model_terms:ir.ui.view,arch_db:l10n_ar_pos_einvoice_receipt.pos_config_view_form
+msgid "Show invoice number"
+msgstr "Mostrar número de factura"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model_terms:ir.ui.view,arch_db:l10n_ar_pos_einvoice_receipt.pos_config_view_form
+msgid "Show invoice number on receipts when \"Invoice\" checked"
+msgstr "Mostrar número de factura cuando \"Facturar\" está seleccionado"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#: model_terms:ir.ui.view,arch_db:l10n_ar_pos_einvoice_receipt.pos_config_view_form
+msgid "Show phone number, e-mail and website info on header"
+msgstr "Mostrar información de número de teléfono, e-mail y sitio web en la cabecera"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "V.A.T.:"
+msgstr "C.U.I.T.:"
+
+#. module: l10n_ar_pos_einvoice_receipt
+#. openerp-web
+#: code:addons/l10n_ar_pos_einvoice_receipt/static/src/xml/pos.xml:0
+#, python-format
+msgid "Website:"
+msgstr "Sitio web:"

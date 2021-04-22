@@ -1,0 +1,238 @@
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="OrderReceipt">
+
+        <!-- Remove contact info -->
+        <t t-jquery="t[t-if*='receipt.company.phone']" t-operation="replace">
+        </t>
+        <t t-jquery="t[t-if*='receipt.company.email']" t-operation="replace">
+        </t>
+        <t t-jquery="t[t-if*='receipt.company.website']" t-operation="replace">
+        </t>
+
+        <!-- Replace default company info and add all required fields for invoicing -->
+        <t t-jquery="t[t-if*='receipt.company.vat']" t-operation="replace">
+            <div class="afip-info" style="margin-top:10px;">
+                <t t-if="order.invoice_number">
+                    <div><b><t t-esc="order.l10n_ar_afip_responsibility_type_id"/></b></div>
+                    <div><b>V.A.T.: </b><t t-esc="order.vat"/></div>
+                    <div><b>G.I.I.: </b><t t-esc="order.l10n_ar_gross_income_number"/></div>
+                    <div><b>Activities start: </b><t t-esc="order.l10n_ar_afip_start_date"/></div>
+                    <t t-if="order.company_registry"><div><b>Company registry: </b><t t-esc="order.company_registry"/></div></t>
+                    <div><b>Address: </b><t t-esc="order.street"/></div>
+                </t>
+                <!-- Show contact info if show_contact_info is set to True -->
+                <t t-if="widget.pos.config.show_contact_info">
+                    <div><b>Phone: </b><t t-esc="receipt.company.phone"/></div>
+                    <div><b>E-mail: </b><t t-esc="receipt.company.email"/></div>
+                    <div><b>Website: </b><t t-esc="receipt.company.website"/></div>
+                </t>
+            </div>
+
+        </t>
+
+        <!-- Add invoice info section -->
+        <t t-jquery="t[t-if*='receipt.cashier']" t-operation="replace">
+            <t t-if="order.invoice_number and widget.pos.config.show_invoice_number">
+                <div class="afip-invoice-info" >
+                    <hr/>
+                    <b>Invoice <t t-esc="order.invoice_letter"/></b>
+                        <t t-if="order.invoice_letter == 'A'">
+                           <b> - Cod. <t t-esc="order.l10n_latam_document_type_id"/></b>
+                        </t>
+                        <br/>
+                    <b>Nbr.: </b><t t-esc="order.invoice_number"/><br/>
+                    <b>Date: </b><t t-esc="receipt.date.localestring"/>
+                    <hr/>
+                </div>
+            </t>
+
+            <!-- Add client info section -->
+            <t t-set="client" t-value="order.get_client()"/>
+            <t t-if="client and widget.pos.config.show_customer_vat">
+                <div class="afip-client-info">
+                    <t t-set="client" t-value="order.get_client()"/>
+                    <b>Customer: </b><t t-esc="client['name']"/><br/>
+
+                    <t t-if="client['l10n_ar_afip_responsibility_type_id']">
+                        <b><t t-esc="client['l10n_ar_afip_responsibility_type_id'][1]"/></b>
+                        <br/>
+                    </t>
+
+                    <t t-if="client['l10n_latam_identification_type_id']">
+                        <b><t t-esc="client['l10n_latam_identification_type_id'][1]"/>:</b>
+                    </t>
+
+                    <t t-if="client['vat']">
+                        <t t-esc="client['vat']"/>
+                        <br/>
+                    </t>
+
+                    <t t-if="client['street']">
+                        <b>Address: </b><t t-esc="client['street']"/>
+                        <t t-if="client['city']">
+                            , <t t-esc="client['city']"/>
+                        </t>
+                        <t t-if="client['state_id']">
+                            , <t t-esc="client['state_id'][1]"/>
+                        </t>
+                        <br/>
+                    </t>
+                </div>
+            </t>
+
+            <!-- Add cashier info if show_cashier_info is set to True -->
+            <t t-if="widget.pos.config.show_cashier_info">
+                <div class="cashier">
+                    <hr/>
+                    <div>Served by <t t-esc="receipt.cashier"/></div>
+                </div>
+            </t>
+
+            <!-- Add order lines table header -->
+            <hr/>
+                <div>
+                    <strong>
+                        <span style="align: left;">DESCRIPTION</span><br/>
+                        <span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;QTY. x UNIT PR.</span>
+                    </strong>
+                    <div class="pos-receipt-right-align">
+                        <strong>
+                            <span>AMOUNT</span>
+                        </strong>
+                    </div>
+                </div>
+            <hr/>
+        </t>
+    
+        <!-- Remove taxincluded -->
+        <t t-jquery="t[t-if*='taxincluded']" t-operation="replace">
+        </t>
+
+        <!-- Make several changes to the order lines to show prices with or without taxes depending
+        on the customer's responsibility type -->
+        <t t-jquery=".orderlines" t-operation="replace">
+            <div class="orderlines">
+                <t t-foreach="receipt.orderlines" t-as="line">
+                    <t t-set="simple" t-value="(line.discount === 0 and line.unit_name === 'Units' and line.quantity === 1 and !discount_to_show and !(line.display_discount_policy == 'without_discount' &amp;&amp; line.price != line.price_lst))"/>
+                    <t t-if="simple">
+                        <div><t t-esc="line.product_name_wrapped[0]"/><span t-esc="widget.format_currency(line.price_display)" class="price_display pos-receipt-right-align"/></div><t t-call="OrderReceiptWrappedProductNameLines"/></t>
+                    <t t-if="!simple">
+                        <div t-esc="line.product_name_wrapped[0]"/><t t-call="OrderReceiptWrappedProductNameLines"/><t t-if="line.display_discount_policy == 'without_discount' &amp;&amp; line.price != line.price_lst"><div class="pos-receipt-left-padding"><t t-esc="widget.format_currency(line.price_lst)" />-><t t-esc="widget.format_currency(line.price)"/></div>
+                        </t>
+                        <t t-elif="line.discount !== 0">
+                            <div class="pos-receipt-left-padding">
+                                <t t-if="pos.config.iface_tax_included === 'total'">
+                                    <t t-esc="widget.format_currency(line.price_with_tax_before_discount)"/>
+                                </t>
+                                <t t-else="">
+                                    <t t-esc="widget.format_currency(line.price)"/>
+                                </t>
+                            </div>
+                        </t>
+                        <t t-if='line.discount !== 0'>
+                            <div class="pos-receipt-left-padding">
+                                Discount: <t t-esc="line.discount"/>%
+                            </div>
+                        </t>
+                        <div class="pos-receipt-left-padding">
+                            <t t-esc="Math.round(line.quantity * Math.pow(10, pos.dp['Product Unit of Measure'])) / Math.pow(10, pos.dp['Product Unit of Measure'])"/>
+                            <t t-if="line.unit_name !== 'Units'" t-esc="line.unit_name"/>
+                            x
+                            <t t-if="order.invoice_letter == 'A'">
+                                <!-- Unit price without VAT -->
+                                <t t-esc="widget.format_currency(line.price_without_tax / line.quantity)"/>
+                            </t>
+                            <t t-if="order.invoice_letter !== 'A'">
+                                <!-- Subtotal splitted by product qty. -->
+                                <t t-esc="widget.format_currency(line.price_with_tax / line.quantity)"/>
+                            </t>
+                            <span class="price_display pos-receipt-right-align">
+                                <t t-if="order.invoice_letter == 'A'">
+                                    <!-- Product subtotal without VAT -->
+                                    <t t-esc="widget.format_currency(line.price_without_tax)"/>
+                                </t>
+                                <t t-if="order.invoice_letter !== 'A'">
+                                    <!-- Product subtotal with VAT -->
+                                    <t t-esc="widget.format_currency(line.price_with_tax)"/>
+                                </t>
+                            </span>
+                        </div>
+                    </t>
+                </t>
+                <t t-set="imp_inclu" t-value="Math.abs(receipt.subtotal - receipt.total_with_tax) &lt;= 0.000001" />
+                <t t-if="!imp_inclu &amp;&amp; order.invoice_letter == 'A'">
+                        <div class="pos-receipt-right-align">--------</div>
+                    <br/>
+                    <div style="text-align: right;"><strong>Subtotal&#160;&#160;&#160;</strong><span t-esc="widget.format_currency(receipt.subtotal)" class="pos-receipt-right-align"/></div>
+                    <t t-foreach="receipt.tax_details" t-as="tax">
+                        <div style="text-align: right;">
+                            <strong><t t-esc="tax.name"/>&#160;&#160;&#160;</strong>
+                            <span t-esc="widget.format_currency(tax.amount)" class="pos-receipt-right-align"/>
+                        </div>
+                    </t>
+                </t>
+                <t t-if="imp_inclu &amp;&amp; order.invoice_letter == 'A'">
+                        <div class="pos-receipt-right-align">--------</div>
+                    <br/>
+                    <div style="text-align: right;"><strong>Subtotal&#160;&#160;&#160;</strong><span t-esc="widget.format_currency(receipt.total_without_tax)" class="pos-receipt-right-align"/></div>
+                    <t t-foreach="receipt.tax_details" t-as="tax">
+                        <div style="text-align: right;">
+                            <strong><t t-esc="tax.name"/>&#160;&#160;&#160;</strong>
+                            <span t-esc="widget.format_currency(tax.amount)" class="pos-receipt-right-align"/>
+                        </div>
+                    </t>
+                </t>
+            </div>
+        </t>
+
+        <!-- Replace entire pos-receipt-amount to align all elements to the right -->
+        <t t-jquery=".pos-receipt-amount:not(.receipt-change)" t-operation="replace">
+            <div style="text-align: right;">
+                <strong>Total&#160;&#160;&#160;</strong>
+                <span t-esc="widget.format_currency(receipt.total_with_tax)" class="pos-receipt-right-align"/>
+            </div>
+        </t>
+
+        <!-- Search for payment lines and align all elements to the right -->
+        <t t-jquery="t[t-foreach*='paymentlines']:first" t-operation="replace">
+            <t t-foreach='paymentlines' t-as='line'>
+                <div style="text-align: right;">
+                    <strong><t t-esc='line.name'/>&#160;&#160;&#160;</strong>
+                    <span t-esc='widget.format_currency(line.get_amount())' class="pos-receipt-right-align"/>
+                </div>
+            </t>
+        </t>
+
+        <!-- Align change to the right -->
+        <t t-jquery=".pos-receipt-amount.receipt-change" t-operation="replace">
+            <div style="text-align: right;">
+                <strong>Change&#160;&#160;&#160;</strong>
+                <span t-esc="widget.format_currency(receipt.change)" class="pos-receipt-right-align"/>
+            </div>
+        </t>
+
+        <!-- Add QR, C.A.E. nbr. and C.A.E. due date -->
+        <t t-jquery=".before-footer" t-operation="after">
+            <t t-if="order.afip_auth_code and widget.pos.config.show_invoice_number">
+                <hr/>
+                <div class="afip-cae-info"  style="text-align: center; font-size: 75%; margin-top: 10px;">
+                    <t t-if="order.afip_qr_code">
+                        <div style="overflow: hidden;">
+                            <img t-attf-src="/report/barcode/?type={{'QR'}}&amp;value={{order.afip_qr_code}}&amp;width={{100}}&amp;height={{100}}" style="width:100px;height:100px"/>
+                        </div>
+                    </t>
+                    <div style="margin-top:5px;">
+                        <strong>C.A.E.:</strong> <t t-esc="order.afip_auth_code"/><br/>
+                        <strong>C.A.E. Due:</strong> <t t-esc="order.afip_auth_code_due"/>
+                    </div>
+                    <div style="margin-top:10px; overflow: hidden;">
+                            <img t-attf-src="/l10n_ar_pos_einvoice_receipt/static/src/img/afip.png" style="width:100px;height:34px"/>
+                    </div>
+                    <strong>Authorized voucher</strong>
+                </div>
+            </t>
+        </t>
+
+    </t>
+</templates>
