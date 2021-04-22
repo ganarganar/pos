@@ -43,6 +43,12 @@ To make the "Invoice" button enabled by default:
 #. Go the point of sale that you want to configure, click the three vertical dots, and then "Settings".
 #. Under the "Bills & Receipts" section you must check the option "Invoice by default".
 
+To automatically download a copy of the generated invoice:
+
+#. Go to *Point of sale > Dashboard*.
+#. Go the point of sale that you want to configure, click the three vertical dots, and then "Settings".
+#. Under the "Bills & Receipts" section you must check the option "PDF invoice download".
+
 To show or hide the cashier info on the receipt:
 
 #. Go to *Point of sale > Dashboard*.

@@ -8,6 +8,28 @@
             <xpath expr="//field[@name='module_account']/../.." position="after">
                     <div class="col-xs-12 col-lg-6 o_setting_box">
                         <div class="o_setting_left_pane">
+                            <field name="invoice_by_default"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label string="Invoice by default" for="invoice_by_default"/>
+                            <div class="text-muted">
+                                Make "Invoice" checked by default on payment screen
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="pdf_invoice_download"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label string="PDF invoice download" for="pdf_invoice_download"/>
+                            <div class="text-muted">
+                                Download a PDF copy of the generated invoice
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
                             <field name="show_cashier_info"/>
                         </div>
                         <div class="o_setting_right_pane">
@@ -50,17 +72,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-lg-6 o_setting_box">
-                        <div class="o_setting_left_pane">
-                            <field name="invoice_by_default"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label string="Invoice by default" for="invoice_by_default"/>
-                            <div class="text-muted">
-                                Make "Invoice" checked by default on payment screen
-                            </div>
-                        </div>
-                    </div>
+
                 </xpath>
             </field>
         </record>
