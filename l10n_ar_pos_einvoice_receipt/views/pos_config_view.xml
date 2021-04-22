@@ -1,0 +1,68 @@
+<odoo>
+
+       <record model="ir.ui.view" id="pos_config_view_form">
+            <field name="name">pos.config.form.view.inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//field[@name='module_account']/../.." position="after">
+                    <div class="col-xs-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="show_cashier_info"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label string="Show cashier info" for="show_cashier_info"/>
+                            <div class="text-muted">
+                                Show cashier name on ticket
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="show_contact_info"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label string="Show contact info" for="show_contact_info"/>
+                            <div class="text-muted">
+                                Show phone number, e-mail and website info on header
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="show_customer_vat"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label string="Show customer's VAT" for="show_customer_vat"/>
+                            <div class="text-muted">
+                                Show customers VAT related info on receipts when "Invoice" checked
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="show_invoice_number"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label string="Show invoice number" for="show_invoice_number"/>
+                            <div class="text-muted">
+                                Show invoice number on receipts when "Invoice" checked
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="invoice_by_default"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label string="Invoice by default" for="invoice_by_default"/>
+                            <div class="text-muted">
+                                Make "Invoice" checked by default on payment screen
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+</odoo>
