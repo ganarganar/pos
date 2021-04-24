@@ -29,6 +29,7 @@
     "depends": [
         "point_of_sale",
         "l10n_ar_afipws_fe"
+        "l10n_ar_pos"
     ],
     "data": [
         "views/l10n_ar_pos_einvoice_receipt_templates.xml",
