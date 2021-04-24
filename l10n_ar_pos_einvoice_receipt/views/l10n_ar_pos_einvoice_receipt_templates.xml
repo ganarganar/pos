@@ -3,6 +3,7 @@
     <template id="assets_backend" name="l10n_ar_pos_einvoice_receipt assets" inherit_id="point_of_sale.assets">
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/l10n_ar_pos_einvoice_receipt/static/src/js/models.js"></script>
+            <script type="text/javascript" src="/l10n_ar_pos_einvoice_receipt/static/src/js/screens.js"></script>
             <link rel="stylesheet" href="/l10n_ar_pos_einvoice_receipt/static/src/css/pos_receipts.css"/>
         </xpath>
     </template>
