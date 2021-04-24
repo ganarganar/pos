@@ -1,6 +1,6 @@
 ##############################################################################
 #
-#    Copyright (C) 2021  Ganar Ganar  (https://ganargan.ar)
+#    Copyright (C) 2021 Ganar Ganar (https://ganargan.ar)
 #    All Rights Reserved.
 #
 #    This program is free software: you can redistribute it and/or modify
