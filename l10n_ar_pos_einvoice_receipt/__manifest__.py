@@ -28,7 +28,7 @@
     "category": "Point of sale",
     "depends": [
         "point_of_sale",
-        "l10n_ar_afipws_fe"
+        "l10n_ar_afipws_fe",
         "l10n_ar_pos"
     ],
     "data": [
