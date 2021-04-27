@@ -22,7 +22,7 @@
     "name": """Point Of Sale Mobile""",
     "summary": """Mobile version of POS""",
     "license": "AGPL-3",
-    "version": "13.0.1.0.0",
+    "version": "13.0.1.0.1",
     "author": "Ganar Ganar",
     "support": "soporte@ganargan.ar",
     "category": "Point of sale",
