@@ -22,11 +22,13 @@
     "name": "Point Of Sale Debranding",
     "summary": """Overrides POS tab name and POS logo.""",
     "license": "AGPL-3",
-    "version": "13.0.1.0.0",
+    "version": "13.0.1.0.1",
     "author": "Ganar Ganar",
     "support": "soporte@ganargan.ar",
     "category": "Point of sale",
-    "depends": [],
+    "depends": [
+        "point_of_sale"
+    ],
     "data": [
         "views/pos_debranding_templates.xml",
         "views/views.xml"
