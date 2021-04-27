@@ -530,12 +530,14 @@
 .pos.mobile .searchbox input {
     width: 400px;
     border: 2px solid #e8e8e8;
-    padding: 20px 30px;
     margin: 15px;
     border-radius: initial;
     font-size: 50px;
     background: inherit;
+    padding-top: 20px;
     padding-right: 100px;
+    padding-bottom: 20px;
+    padding-left: 100px;
     height: 75px;
     border-radius: 15px;
     background: white;
@@ -543,16 +545,24 @@
 .pos.mobile .searchbox input:focus {
     box-shadow: 0px 0px 0px 4px rgb(153, 153, 255) inset;
 }
-.pos.mobile .search-clear {
+.pos.mobile .search-clear.left{
     width: 100px;
     height: 100px;
     top: 24px;
     right: 16px;
     font-size: 70px;
     margin: 0 10px;
-    color: #e8e8e8;
+    color: #a0a0a0;
+}
+.pos.mobile .search-clear.right{
+    width: 100px;
+    height: 100px;
+    top: 24px;
+    right: 16px;
+    font-size: 70px;
+    margin: 0 10px;
+    color: #a0a0a0;
     left: auto;
-    padding: 7px;
 }
 /*  c) the categories list */
 .pos.mobile .categories {
