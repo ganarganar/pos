@@ -1,0 +1,121 @@
+body {
+    @media (max-width: 768px) {
+        .pos {
+            .pos-topheader {
+                .pos-branding {
+                    display: none;
+                }
+
+                .pos-rightheader {
+                    left: 0;
+
+                    .oe_status {
+                        // A name is way too wide, 
+                        // see to replace it with an icon.
+                        display: none;
+                    }
+                }
+            }
+
+            .pos-content {
+                .window,
+                .subwindow,
+                .subwindow-container,
+                .subwindow-container-fix {
+                    display: block;
+                }
+
+                .leftpane {
+                    width: 100%;
+                    border-right: 0px;
+
+
+                    .pads {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        flex-wrap: wrap;
+
+                        .actionpad {
+                            display: flex;
+                            flex-direction: column;
+                            flex-basis: 20%;
+                            margin: rem(8px) 0px rem(16px) rem(12px);
+
+                            button.button {
+                                float: none;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex: 1 0 25%;
+                                height: unset;
+                                width: unset;
+                                box-sizing: border-box;
+                                padding: unset;
+
+                                .fa-user {
+                                    left: rem(13px);
+                                    top: unset;
+                                    margin-right: unset;
+                                    font-size: rem(18px);
+                                    line-height: rem(30px);
+                                    width: rem(30px);
+                                }
+
+                                .pay-circle {
+                                    position: absolute;
+                                    left: rem(13px);
+                                    font-size: rem(18px);
+                                    line-height: rem(30px);
+                                    width: rem(30px);
+                                    border-radius: rem(20px);
+                                    padding-top: 0;
+                                    margin: 0;
+
+                                    .fa {
+                                        top: rem(1px);
+                                        left: rem(2px);
+                                    }
+                                }
+                            }
+                        }
+
+                        .numpad {
+                            margin: rem(8px) rem(12px) rem(16px) 0px;
+                            min-width: rem(216px);
+                            display: flex;
+                            flex-flow: row wrap;
+
+                            br {
+                                display: none;
+                            }
+
+                            button {
+                                &.input-button,
+                                &.mode-button {
+                                    float: none;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    flex: 1 0 25%;
+                                    height: unset;
+                                    width: unset;
+                                    box-sizing: border-box;
+                                    padding: unset;
+                                }
+
+                                &.mode-button {
+                                    font-size: rem(10px);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .rightpane {
+                    display: none;
+                }
+            }
+        }
+    }
+}
