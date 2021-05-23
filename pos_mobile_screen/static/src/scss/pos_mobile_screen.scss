@@ -34,6 +34,15 @@ body {
                         .window {
                             .subwindow {
                                 height: 60%;
+
+                                .order {
+                                    width: 100%;
+                                    margin: 0 auto;
+
+                                    .order-empty {
+                                        margin: rem(32px) rem(64px);
+                                    }
+                                }
                             }
 
                             .subwindow.collapsed {
@@ -155,7 +164,6 @@ body {
                         }
 
                         span.searchbox {
-                            
                             position: relative;
                             right: unset;
                             margin: 0;
