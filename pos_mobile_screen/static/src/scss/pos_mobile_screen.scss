@@ -18,81 +18,42 @@ body {
             }
 
             .pos-content {
-                .window,
-                .subwindow,
-                .subwindow-container,
-                .subwindow-container-fix {
-                    display: block;
-                }
+                /*** PRODUCT SCREEN ***/
+                .product-screen.screen {
+                    // .window,
+                    // .subwindow,
+                    // .subwindow-container,
+                    // .subwindow-container-fix {
+                    //     display: block;
+                    // }
 
-                .leftpane {
-                    width: 100%;
-                    border-right: 0px;
+                    .leftpane {
+                        width: 100%;
+                        border-right: 0px;
 
+                        .window {
+                            .subwindow {
+                                height: 60%;
+                            }
 
-                    .pads {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        flex-wrap: wrap;
-
-                        .actionpad {
-                            display: flex;
-                            flex-direction: column;
-                            flex-basis: 20%;
-                            margin: rem(8px) 0px rem(16px) rem(12px);
-
-                            button.button {
-                                float: none;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                flex: 1 0 25%;
-                                height: unset;
-                                width: unset;
-                                box-sizing: border-box;
-                                padding: unset;
-
-                                .fa-user {
-                                    left: rem(13px);
-                                    top: unset;
-                                    margin-right: unset;
-                                    font-size: rem(18px);
-                                    line-height: rem(30px);
-                                    width: rem(30px);
-                                }
-
-                                .pay-circle {
-                                    position: absolute;
-                                    left: rem(13px);
-                                    font-size: rem(18px);
-                                    line-height: rem(30px);
-                                    width: rem(30px);
-                                    border-radius: rem(20px);
-                                    padding-top: 0;
-                                    margin: 0;
-
-                                    .fa {
-                                        top: rem(1px);
-                                        left: rem(2px);
-                                    }
-                                }
+                            .subwindow.collapsed {
+                                height: 40%;
                             }
                         }
 
-                        .numpad {
-                            margin: rem(8px) rem(12px) rem(16px) 0px;
-                            min-width: rem(216px);
+                        .pads {
                             display: flex;
-                            flex-flow: row wrap;
+                            flex-direction: row;
+                            justify-content: center;
+                            flex-wrap: wrap;
 
-                            br {
-                                display: none;
-                            }
+                            .actionpad {
+                                display: flex;
+                                flex-direction: column;
+                                flex-basis: 20%;
+                                margin: rem(8px) 0px rem(16px) rem(12px);
 
-                            button {
-                                &.input-button,
-                                &.mode-button {
+                                button.button {
                                     float: none;
                                     display: flex;
                                     align-items: center;
@@ -102,18 +63,150 @@ body {
                                     width: unset;
                                     box-sizing: border-box;
                                     padding: unset;
+
+                                    .fa-user {
+                                        left: rem(13px);
+                                        top: unset;
+                                        margin-right: unset;
+                                        font-size: rem(18px);
+                                        line-height: rem(30px);
+                                        width: rem(30px);
+                                    }
+
+                                    .pay-circle {
+                                        position: absolute;
+                                        left: rem(13px);
+                                        font-size: rem(18px);
+                                        line-height: rem(30px);
+                                        width: rem(30px);
+                                        border-radius: rem(20px);
+                                        padding-top: 0;
+                                        margin: 0;
+
+                                        .fa {
+                                            top: rem(1px);
+                                            left: rem(2px);
+                                        }
+                                    }
+                                }
+                            }
+
+                            .numpad {
+                                margin: rem(8px) rem(12px) rem(16px) 0px;
+                                min-width: rem(216px);
+                                display: flex;
+                                flex-flow: row wrap;
+
+                                br {
+                                    display: none;
                                 }
 
-                                &.mode-button {
-                                    font-size: rem(10px);
+                                button {
+                                    &.input-button,
+                                    &.mode-button {
+                                        float: none;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        flex: 1 0 25%;
+                                        height: unset;
+                                        width: unset;
+                                        box-sizing: border-box;
+                                        padding: unset;
+                                    }
+
+                                    &.mode-button {
+                                        font-size: rem(10px);
+                                    }
                                 }
                             }
                         }
                     }
+
+                    .rightpane {
+                        display: none;
+                    }
                 }
 
-                .rightpane {
-                    display: none;
+                /*** CLIENT SCREEN ***/
+                .clientlist-screen.screen {
+                    section.top-content {
+                        padding: rem(12px) rem(8px);
+                        display: -webkit-box;
+                        display: -webkit-flex;
+                        display: flex;
+                        flex-direction: row;
+                        -webkit-flex-wrap: nowrap;
+                        flex-wrap: nowrap;
+                        justify-content: space-between;
+                        align-content: stretch;
+                        align-items: stretch;
+                        height: rem(42px);
+                        border-bottom: unset;
+
+                        span.button.back {
+                            position: relative;
+                            font-size: rem(14px);
+                            margin: 0;
+                            border-radius: rem(3px);
+                            border: solid rem(1px) rgb(209, 209, 209);
+                        }
+
+                        span.searchbox {
+                            
+                            position: relative;
+                            right: unset;
+                            margin: 0;
+                            left: unset;
+                            position: relative;
+                            flex-grow: 1;
+                            flex-basis: 75%;
+                            padding-inline: rem(3px);
+                            display: flex;
+                            flex-basis: 40%;
+
+                            ~ span.searchbox {
+                                display: none;
+                            }
+
+                            input {
+                                width: 100%;
+                                margin: rem(0px);
+                                margin-inline: rem(12px);
+                                padding: 0 rem(12px);
+                                font-family: "Lato","Lucida Grande", Helvetica, Verdana, Arial;
+                                font-size: rem(14px);
+                                height: 100%;
+                            }
+                        }
+
+                        .button.new-customer {
+                            position: relative;
+                            left: unset;
+                            margin: 0;
+                            font-size: rem(14px);
+                        }
+                    }
+
+                    section.full-content {
+                        .subwindow:nth-child(2) {
+                            table.client-list {
+                                font-size: rem(14px);
+                                line-height: rem(16px);
+
+                                th {
+                                    color: #f0eeee;
+                                    background-color: #393939;
+                                    padding: rem(6px) 0;
+                                    padding-left: rem(6px);
+                                }
+
+                                td {
+                                    padding: rem(4px) rem(4px);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
