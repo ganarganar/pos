@@ -39,7 +39,7 @@ body {
                             }
 
                             .subwindow:not(.collapsed) {
-                                height: 60%;
+                                height: 55%;
 
                                 .order {
                                     width: 100%;
@@ -52,7 +52,7 @@ body {
                             }
 
                             .subwindow.collapsed {
-                                height: 40%;
+                                height: 45%;
                             }
                         }
 
@@ -71,33 +71,37 @@ body {
 
                                 button.button {
                                     float: none;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
                                     flex: 1 0 25%;
                                     height: unset;
                                     width: unset;
                                     box-sizing: border-box;
                                     padding: unset;
+                                    font-size: rem(12px);
+                                    padding-inline: rem(6px);
 
                                     .fa-user {
-                                        left: rem(13px);
+                                        display: block;
+                                        position: relative;
+                                        left: unset;
                                         top: unset;
-                                        margin-right: unset;
+                                        margin: 0 auto;
+                                        margin-bottom: rem(3px);
                                         font-size: rem(18px);
                                         line-height: rem(30px);
                                         width: rem(30px);
                                     }
 
                                     .pay-circle {
-                                        position: absolute;
-                                        left: rem(13px);
+                                        display: block;
+                                        position: relative;
+                                        left: unset;
                                         font-size: rem(18px);
                                         line-height: rem(30px);
                                         width: rem(30px);
                                         border-radius: rem(20px);
                                         padding-top: 0;
-                                        margin: 0;
+                                        margin: 0 auto;
+                                        margin-bottom: rem(3px);
 
                                         .fa {
                                             top: rem(1px);
@@ -109,7 +113,6 @@ body {
 
                             .numpad {
                                 margin: rem(8px) rem(12px) rem(16px) 0px;
-                                min-width: rem(216px);
                                 display: flex;
                                 flex-flow: row wrap;
                                 flex-grow: 1;
@@ -315,6 +318,185 @@ body {
                                     width: 100%;
                                     padding-inline: rem(6px);
                                     margin-inline: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                /*** PAYMENT SCREEN ***/
+                .payment-screen.screen {
+                    // Screen Wrapper
+                    .screen-content {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    // Top Navigation Bar
+                    .top-content {
+                        position: relative;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0 rem(12px);
+                        z-index: 3;
+                        min-height: 4rem;
+
+                        .button {
+                            position: relative;
+                            left: unset;
+                            margin: 0;
+                            font-size: rem(12px);
+                        }
+                    }
+
+                    .left-content,
+                    .right-content {
+                        position: relative;
+                        left: unset;
+                        top: unset;
+                        bottom: unset;
+                        right: unset;
+                    }
+
+                    // Payment Methods
+                    .left-content {
+                        min-height: 4rem;
+                        overflow-y: hidden !important;
+                        overflow-x: auto !important;
+                        z-index: 2;
+                        box-shadow: 0px rem(5px) rem(5px) 0px #00000030;
+
+                        .paymentmethods {
+                            margin: 0;
+                            display: flex;
+                            flex-direction: row;
+                            align-content: space-around;
+                            justify-content: space-around;
+                            align-items: center;
+                            padding-block: rem(6px);
+
+                            .button.paymentmethod {
+                                line-height: rem(48px);
+                                padding-inline: rem(12px);
+                                border-top-width: rem(1px);
+                                border-radius: rem(3px);
+                                font-size: rem(12px);
+                                font-weight: 600;
+                            }
+                        }
+                    }
+
+                    // Payment lines, numpad and payment buttons
+                    .right-content {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        justify-content: center;
+                        align-items: stretch;
+                        flex-grow: 1;
+
+                        // Payment lines
+                        .paymentlines-container {
+                            padding: 0;
+                            border-bottom: none;
+                            min-height: unset;
+                            flex-basis: 50%;
+                            overflow-y: auto;
+                            overflow-x: hidden;
+
+                            .paymentlines-empty {
+                                .total {
+                                    font-size: rem(48px);
+                                    padding: rem(16px) ​0;
+                                }
+                            }
+
+                            table.paymentlines {
+                                th, td {
+                                    font-size: rem(16px);
+                                    padding: rem(8px) rem(3px) rem(8px) rem(8px);
+                                    min-width: unset;
+                                }
+                            }
+                        }
+
+                        // Numpad
+                        .payment-numpad {
+                            display: flex;
+                            flex-basis: 50%;
+                            padding: 0;
+                            width: unset;
+                            float: none;
+                            padding: rem(6px) rem(16px) rem(12px) rem(16px);
+                            box-shadow: 0px rem(-5px) rem(5px) 0px #00000030;
+                            z-index: 2;
+
+                            .numpad {
+                                display: flex;
+                                flex-flow: row wrap;
+                                flex-grow: 1;
+                                width: unset;
+
+                                br {
+                                    display: none;
+                                }
+
+                                button {
+                                    &.input-button,
+                                    &.mode-button {
+                                        float: none;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        flex: 1 0 25%;
+                                        height: unset;
+                                        width: unset;
+                                        box-sizing: border-box;
+                                        padding: unset;
+                                    }
+
+                                    &.mode-button {
+                                        font-size: rem(10px);
+                                    }
+                                }
+                            }
+                        }
+
+                        // Payment buttons
+                        .payment-buttons {
+                            display: flex;
+                            flex-direction: row;
+                            padding: 0;
+                            width: unset;
+                            float: none;
+                            flex-basis: 12%;
+                            
+                            .button {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;    
+                                font-size: rem(12px);
+                                font-weight: 600;
+                                line-height: rem(20px);
+                                border-left: none;
+                                flex-grow: 1;
+                                flex-basis: 50%;
+                                border-radius: unset;
+                                border-width: rem(1px);
+
+                                .fa {
+                                    display: block;
+                                    margin: 0 auto;
+                                    position: relative;
+                                    left: unset;
+                                    top: unset;
+                                    width: rem(24px);
+                                    height: rem(24px);
+                                    line-height: rem(24px);
+                                    border-radius: rem(16px);
+                                    font-size: rem(16px);
                                 }
                             }
                         }
