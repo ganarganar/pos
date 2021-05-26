@@ -384,6 +384,7 @@ body {
                                 border-radius: rem(3px);
                                 font-size: rem(12px);
                                 font-weight: 600;
+                                margin-inline: rem(6px);
                             }
                         }
                     }
@@ -404,7 +405,7 @@ body {
                             min-height: unset;
                             flex-basis: 50%;
                             overflow-y: auto;
-                            overflow-x: hidden;
+                            overflow-x: auto;
 
                             .paymentlines-empty {
                                 .total {
@@ -414,9 +415,20 @@ body {
                             }
 
                             table.paymentlines {
-                                th, td {
+                                border-spacing: 0;
+                                background-color: white;
+
+                                th {
+                                    min-width: unset;
                                     font-size: rem(16px);
-                                    padding: rem(8px) rem(3px) rem(8px) rem(8px);
+                                    background-color: #393939;
+                                    color: #f0eeee;
+                                }
+
+                                td {
+                                    font-size: rem(14px);
+                                    font-weight: 600;
+                                    padding: rem(12px) rem(3px) rem(12px) rem(8px);
                                     min-width: unset;
                                 }
                             }
@@ -471,7 +483,7 @@ body {
                             padding: 0;
                             width: unset;
                             float: none;
-                            flex-basis: 12%;
+                            flex-basis: 15%;
                             
                             .button {
                                 display: flex;
@@ -497,6 +509,56 @@ body {
                                     line-height: rem(24px);
                                     border-radius: rem(16px);
                                     font-size: rem(16px);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                /*** RECEIPT SCREEN ***/
+                .receipt-screen.screen {
+                    // Screen Wrapper
+                    .screen-content {
+                        display: flex;
+                        flex-direction: column;
+
+                        // Top navigation bar
+                        .top-content {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding-inline: rem(12px);
+                            box-shadow: 0px rem(5px) rem(5px) 0px #00000030;
+                            position: relative;
+                            border-bottom: unset;
+
+                            h1 {
+                                margin: 0;
+                                font-size: rem(18px);
+                            }
+
+                            span.button.next {
+                                margin: 0;
+                                font-size: rem(14px);
+                                font-weight: 600;
+                                position: relative;
+                            }
+                        }
+
+                        // Receipt
+                        .centered-content {
+                            position: relative;
+                            right: unset;
+                            top: unset;
+                            bottom: unset;
+                            left: unset;
+                            border-right: none;
+                            border-left: none;
+
+                            .pos-receipt-container {
+                                .pos-receipt {
+                                    margin: rem(10px);
                                 }
                             }
                         }
