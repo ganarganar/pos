@@ -20,6 +20,15 @@ body {
             .pos-content {
                 /*** PRODUCT SCREEN ***/
                 .product-screen.screen {
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    scroll-snap-coordinate: 0 0;
+                    scroll-snap-points-x: repeat(100%);
+                    scroll-snap-type: x mandatory;
+                    flex: 1;
+                    display: flex;
+                    -webkit-overflow-scrolling: touch;
+
                     .window,
                     .subwindow,
                     .subwindow-container,
@@ -27,7 +36,16 @@ body {
                         display: block;
                     }
 
+                    .leftpane,
+                    .rightpane {
+                        width: 100vw;
+                        height: 100%;
+                        flex:0 0 100vw;
+                        scroll-snap-align: start;
+                    }
+
                     .leftpane {
+                        position: relative;
                         width: 100%;
                         border-right: 0px;
 
@@ -144,7 +162,65 @@ body {
                     }
 
                     .rightpane {
-                        display: none;
+                        position: relative;
+                        left: unset;
+                        height: 100%;
+
+                        table.layout-table {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: nowrap;
+                            align-items: stretch;
+
+                            >tbody {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: stretch;
+
+                                tr, td {
+                                    height: unset;
+                                }
+
+                                tr.header-row {
+                                    display: flex;
+                                }
+
+                                tr.content-row {
+                                    display: flex;
+                                    overflow-y: auto;
+
+                                    .product-list-container {
+                                        display: flex;
+                                        position: relative;
+
+                                        .product-list {
+                                            text-align: center;
+                                            
+                                            article:active {
+                                                background-color: black;
+                                                transition: background-color 0.5s;
+
+                                                .product-name {
+                                                    background: -webkit-linear-gradient(-90deg,rgba(0, 0, 0, 0),black,black);
+                                                    color: white;
+                                                    transition: background,color 0.5s;
+                                                }
+
+                                                .product-img {
+                                                    background: black;
+                                                    transition: background 0.5s;
+
+                                                    img {
+                                                        filter: invert(1);
+                                                        transition: filter 0.5s;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
 
