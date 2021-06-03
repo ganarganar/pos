@@ -644,6 +644,52 @@ body {
                     }
                 }
             }
+
+            .popups {
+                .modal-dialog {
+                    padding: rem(2px);
+
+                    .popup {
+                        width: 90%;
+                        height: 75%;
+
+                        .button {
+                            width: unset;
+                            padding-inline: rem(12px);
+                        }
+                    }
+                }
+            }
+
+            .loader {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                
+                .loader-feedback {
+                    padding-inline: rem(30px);
+                    width: unset;
+                    height: unset;
+                    margin: unset;
+                    left: unset;
+                    top: unset;
+                    position: relative;
+
+                    h1.message {
+                        font-weight: 600;
+                        font-size: 1rem;
+                    }
+
+                    .progressbar {
+                        height: rem(4px);
+                        border-radius: rem(4px);
+
+                        >.progress {
+                            border-radius: rem(4px);
+                        }
+                    }
+                }
+            }
         }
     }
 }
