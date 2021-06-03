@@ -168,7 +168,7 @@ body {
 
                         table.layout-table {
                             display: flex;
-                            flex-direction: column;
+                            flex-direction: row;
                             flex-wrap: nowrap;
                             align-items: stretch;
 
@@ -176,6 +176,7 @@ body {
                                 display: flex;
                                 flex-direction: column;
                                 align-items: stretch;
+                                width: 100%;
 
                                 tr, td {
                                     height: unset;
@@ -608,6 +609,8 @@ body {
                             box-shadow: 0px rem(5px) rem(5px) 0px #00000030;
                             position: relative;
                             border-bottom: unset;
+                            min-height: rem(64px);
+                            z-index: 10;
 
                             h1 {
                                 margin: 0;
