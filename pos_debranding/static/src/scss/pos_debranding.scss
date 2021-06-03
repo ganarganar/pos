@@ -1,0 +1,56 @@
+$GGPurple: #7F0096;
+body {
+    .pos {
+        .pos-content {
+            .button.highlight {
+                background-color: $GGPurple !important;
+                border-color: $GGPurple !important;
+            }
+        
+            .mode-button {
+                &.selected-mode {
+                    background-color: $GGPurple;
+                }
+            }
+        
+            .leftpane {
+                .pads {
+                    border-top-color: $GGPurple;
+                }
+            }
+        
+            .categories {
+                border-bottom-color: $GGPurple;
+            }
+    
+            .clientlist-screen.screen {
+                .client-list {
+                    tr.highlight {
+                        background-color: $GGPurple !important;
+                    }
+                }
+
+                section.full-content  {
+                    .window {
+                        .subwindow.collapsed {
+                            border-top-color: $GGPurple !important;
+                        }
+                    }
+                }
+            }
+
+            .paymentline.selected {
+                background-color: $GGPurple;
+
+                .edit {
+                    color: $GGPurple;
+                    box-shadow: 0px 0px 0px 3px $GGPurple;
+                }
+            }
+
+            .payment-screen .paymentlines-empty .total {
+                color: #724399;
+            }
+        }
+    }
+}
