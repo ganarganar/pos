@@ -1,0 +1,13 @@
+<odoo>
+    <template id="pos_mobile_screen_assets" name="Assets for pos_mobile_screen" inherit_id="point_of_sale.index">
+        <xpath expr="//link[last()]" position="after">
+            <t t-call-assets="pos_mobile_screen.assets" t-js="false"/>
+        </xpath>
+    </template>
+
+    <template id="pos_mobile_screen_overrides" name="Overrides for pos_mobile_screen" inherit_id="point_of_sale.index">
+        <xpath expr="//head/meta[@name='viewport']" position="replace">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        </xpath>
+    </template>
+</odoo>

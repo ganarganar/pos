@@ -13,4 +13,7 @@
         </xpath>
     </template>
 
+    <template id="assets_frontend">
+        <link rel="stylesheet" type="text/scss" href="/pos_debranding/static/src/scss/pos_debranding.scss"/>
+    </template>
 </odoo>

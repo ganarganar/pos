@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="assets">
+        <link rel="stylesheet" type="text/scss" href="/pos_mobile_screen/static/src/scss/px-to-rem.scss"/>
+        <link rel="stylesheet" type="text/scss" href="/pos_mobile_screen/static/src/scss/pos_mobile_screen.scss"/>
+    </template>
+</odoo>

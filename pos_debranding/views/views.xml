@@ -4,6 +4,8 @@
         <xpath expr="//title" position="replace">
             <title>POS</title>
         </xpath>
+        <xpath expr="//link[last()]" position="after">
+            <t t-call-assets="pos_debranding.assets_frontend" t-js="false"/>
+        </xpath>
     </template>
-
 </odoo>

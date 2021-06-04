@@ -1,0 +1,695 @@
+body {
+    @media (max-width: 768px) {
+        .pos {
+            .pos-topheader {
+                .pos-branding {
+                    display: none;
+                }
+
+                .pos-rightheader {
+                    left: 0;
+
+                    .oe_status {
+                        // A name is way too wide, 
+                        // see to replace it with an icon.
+                        display: none;
+                    }
+                }
+            }
+
+            .pos-content {
+                /*** PRODUCT SCREEN ***/
+                .product-screen.screen {
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    scroll-snap-coordinate: 0 0;
+                    scroll-snap-points-x: repeat(100%);
+                    scroll-snap-type: x mandatory;
+                    flex: 1;
+                    display: flex;
+                    -webkit-overflow-scrolling: touch;
+
+                    .window,
+                    .subwindow,
+                    .subwindow-container,
+                    .subwindow-container-fix {
+                        display: block;
+                    }
+
+                    .leftpane,
+                    .rightpane {
+                        width: 100vw;
+                        height: 100%;
+                        flex:0 0 100vw;
+                        scroll-snap-align: start;
+                    }
+
+                    .leftpane {
+                        position: relative;
+                        width: 100%;
+                        border-right: 0px;
+
+                        .window {
+                            .subwindow {
+                                .subwindow-container {
+                                    height: 100%;
+                                }
+                            }
+
+                            .subwindow:not(.collapsed) {
+                                height: 55%;
+
+                                .order {
+                                    width: 100%;
+                                    margin: 0 auto;
+
+                                    .order-empty {
+                                        margin: rem(32px) rem(64px);
+                                    }
+                                }
+                            }
+
+                            .subwindow.collapsed {
+                                height: 45%;
+                            }
+                        }
+
+                        .pads {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            flex-wrap: nowrap;
+
+                            .actionpad {
+                                display: flex;
+                                flex-direction: column;
+                                flex-basis: 20%;
+                                margin: rem(8px) 0px rem(16px) rem(12px);
+                                flex-grow: 1;
+
+                                button.button {
+                                    float: none;
+                                    flex: 1 0 25%;
+                                    height: unset;
+                                    width: unset;
+                                    box-sizing: border-box;
+                                    padding: unset;
+                                    font-size: rem(12px);
+                                    padding-inline: rem(6px);
+
+                                    .fa-user {
+                                        display: block;
+                                        position: relative;
+                                        left: unset;
+                                        top: unset;
+                                        margin: 0 auto;
+                                        margin-bottom: rem(3px);
+                                        font-size: rem(18px);
+                                        line-height: rem(30px);
+                                        width: rem(30px);
+                                    }
+
+                                    .pay-circle {
+                                        display: block;
+                                        position: relative;
+                                        left: unset;
+                                        font-size: rem(18px);
+                                        line-height: rem(30px);
+                                        width: rem(30px);
+                                        border-radius: rem(20px);
+                                        padding-top: 0;
+                                        margin: 0 auto;
+                                        margin-bottom: rem(3px);
+
+                                        .fa {
+                                            top: rem(1px);
+                                            left: rem(2px);
+                                        }
+                                    }
+                                }
+                            }
+
+                            .numpad {
+                                margin: rem(8px) rem(12px) rem(16px) 0px;
+                                display: flex;
+                                flex-flow: row wrap;
+                                flex-grow: 1;
+
+                                br {
+                                    display: none;
+                                }
+
+                                button {
+                                    &.input-button,
+                                    &.mode-button {
+                                        float: none;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        flex: 1 0 25%;
+                                        height: unset;
+                                        width: unset;
+                                        box-sizing: border-box;
+                                        padding: unset;
+                                    }
+
+                                    &.mode-button {
+                                        font-size: rem(10px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .rightpane {
+                        position: relative;
+                        left: unset;
+                        height: 100%;
+
+                        table.layout-table {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: nowrap;
+                            align-items: stretch;
+
+                            >tbody {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: stretch;
+                                width: 100%;
+
+                                tr, td {
+                                    height: unset;
+                                }
+
+                                tr.header-row {
+                                    display: flex;
+                                }
+
+                                tr.content-row {
+                                    display: flex;
+                                    overflow-y: auto;
+
+                                    .product-list-container {
+                                        display: flex;
+                                        position: relative;
+
+                                        .product-list {
+                                            text-align: center;
+                                            
+                                            article:active {
+                                                background-color: black;
+                                                transition: background-color 0.5s;
+
+                                                .product-name {
+                                                    background: -webkit-linear-gradient(-90deg,rgba(0, 0, 0, 0),black,black);
+                                                    color: white;
+                                                    transition: background,color 0.5s;
+                                                }
+
+                                                .product-img {
+                                                    background: black;
+                                                    transition: background 0.5s;
+
+                                                    img {
+                                                        filter: invert(1);
+                                                        transition: filter 0.5s;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                /*** CLIENT SCREEN ***/
+                .clientlist-screen.screen {
+                    // Top Navigation Bar
+                    section.top-content {
+                        padding: rem(12px) rem(8px);
+                        display: -webkit-box;
+                        display: -webkit-flex;
+                        display: flex;
+                        flex-direction: row;
+                        -webkit-flex-wrap: nowrap;
+                        flex-wrap: nowrap;
+                        justify-content: space-between;
+                        align-content: stretch;
+                        align-items: stretch;
+                        height: rem(42px);
+                        border-bottom: unset;
+
+                        span.button.back {
+                            position: relative;
+                            font-size: 0px;
+                            margin: 0;
+                            border-radius: rem(3px);
+                            border: solid rem(1px) rgb(209, 209, 209);
+
+                            &:after {
+                                content: 'Atrás';
+                                font-size: rem(14px);
+                                background-color: rgb(230, 230, 230);
+                                color: black;
+                            }
+                        }
+
+                        span.searchbox {
+                            position: relative;
+                            right: unset;
+                            margin: 0;
+                            left: unset;
+                            position: relative;
+                            flex-grow: 1;
+                            flex-basis: 75%;
+                            padding-inline: rem(3px);
+                            display: flex;
+                            flex-basis: 40%;
+
+                            ~ span.searchbox {
+                                display: none;
+                            }
+
+                            input {
+                                width: 100%;
+                                margin: rem(0px);
+                                margin-inline: rem(8px);
+                                padding: 0 rem(12px);
+                                font-family: "Lato","Lucida Grande", Helvetica, Verdana, Arial;
+                                font-size: rem(14px);
+                                height: 100%;
+                            }
+                        }
+
+                        .button.new-customer {
+                            position: relative;
+                            left: unset;
+                            margin: 0;
+                            font-size: rem(14px);
+                        }
+
+                        .button.next {
+                            position: relative;
+                            left: unset;
+                            margin: 0;
+                            font-size: 0px;
+                            background-color: rgb(120,210,165);
+                            margin-left: rem(4px);
+                            
+                            &:after {
+                                content: 'Listo';
+                                font-size: rem(14px);
+                                color: white;
+                            }
+                        }
+                    }
+
+                    // Content
+                    section.full-content {
+
+                        .window {
+                            display: grid;
+                            grid-auto-flow: dense;
+
+                            .subwindow,
+                            .subwindow.collapsed {
+                                overflow-y: auto;
+                                width: 100%;
+                            }
+
+                            .subwindow.collapsed {
+                                grid-row: 2;
+                                box-shadow: 0px -5px 10px 0px #48484877;
+                                border-top: solid 5px rgb(110,200,155);
+                                z-index: 1;
+
+                                .subwindow-container { 
+                                    width: 100%;
+                                }
+                            }
+
+                            .subwindow:not(.collapsed) {
+                                grid-row: 1;
+
+                                .subwindow-container {
+                                    .subwindow-container-fix {
+                                        height: 100% !important;
+                                    }
+                                }
+
+                                // Client List
+                                table.client-list {
+                                    font-size: rem(14px);
+                                    line-height: rem(16px);
+                                    position: relative;
+                                    border-collapse: collapse;
+    
+                                    th {
+                                        color: #f0eeee;
+                                        background-color: #393939;
+                                        padding: rem(6px) 0;
+                                        padding-left: rem(6px);
+                                        position: sticky;
+                                        top: 0;
+                                        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+                                    }
+    
+                                    td {
+                                        padding: rem(4px) rem(4px);
+                                    }
+                                }
+                            }
+                        }
+
+
+                        .client-details {
+                            border-bottom: none;
+
+                            .client-name {
+                                font-size: rem(24px);
+                                line-height: rem(30px);
+                                margin-bottom: rem(24px);
+                            }
+
+                            .client-details-left,
+                            .client-details-right {
+                                width: 100%;
+                                float: none;
+                                font-size: rem(14px);
+                            }
+
+                            // Client Details - EDIT MODE
+                            &.edit {
+                                span.label {
+                                    display: block;
+                                    width: 100%;
+                                    text-align: left;
+                                    margin: 0 0 rem(2px) 0;
+                                }
+
+                                input,
+                                select {
+                                    width: 100%;
+                                    padding-inline: rem(6px);
+                                    margin-inline: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                /*** PAYMENT SCREEN ***/
+                .payment-screen.screen {
+                    // Screen Wrapper
+                    .screen-content {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    // Top Navigation Bar
+                    .top-content {
+                        position: relative;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0 rem(12px);
+                        z-index: 3;
+                        min-height: 4rem;
+
+                        .button {
+                            position: relative;
+                            left: unset;
+                            margin: 0;
+                            font-size: rem(12px);
+                        }
+                    }
+
+                    .left-content,
+                    .right-content {
+                        position: relative;
+                        left: unset;
+                        top: unset;
+                        bottom: unset;
+                        right: unset;
+                    }
+
+                    // Payment Methods
+                    .left-content {
+                        min-height: 4rem;
+                        overflow-y: hidden !important;
+                        overflow-x: auto !important;
+                        z-index: 2;
+                        box-shadow: 0px rem(5px) rem(5px) 0px #00000030;
+
+                        .paymentmethods {
+                            margin: 0;
+                            display: flex;
+                            flex-direction: row;
+                            align-content: space-around;
+                            justify-content: space-around;
+                            align-items: center;
+                            padding-block: rem(6px);
+
+                            .button.paymentmethod {
+                                line-height: rem(48px);
+                                padding-inline: rem(12px);
+                                border-top-width: rem(1px);
+                                border-radius: rem(3px);
+                                font-size: rem(12px);
+                                font-weight: 600;
+                                margin-inline: rem(6px);
+                            }
+                        }
+                    }
+
+                    // Payment lines, numpad and payment buttons
+                    .right-content {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        justify-content: center;
+                        align-items: stretch;
+                        flex-grow: 1;
+
+                        // Payment lines
+                        .paymentlines-container {
+                            padding: 0;
+                            border-bottom: none;
+                            min-height: unset;
+                            flex-basis: 50%;
+                            overflow-y: auto;
+                            overflow-x: auto;
+
+                            .paymentlines-empty {
+                                .total {
+                                    font-size: rem(48px);
+                                    padding: rem(16px) ​0;
+                                }
+                            }
+
+                            table.paymentlines {
+                                border-spacing: 0;
+                                background-color: white;
+
+                                th {
+                                    min-width: unset;
+                                    font-size: rem(16px);
+                                    background-color: #393939;
+                                    color: #f0eeee;
+                                }
+
+                                td {
+                                    font-size: rem(14px);
+                                    font-weight: 600;
+                                    padding: rem(12px) rem(3px) rem(12px) rem(8px);
+                                    min-width: unset;
+                                }
+                            }
+                        }
+
+                        // Numpad
+                        .payment-numpad {
+                            display: flex;
+                            flex-basis: 50%;
+                            padding: 0;
+                            width: unset;
+                            float: none;
+                            padding: rem(6px) rem(16px) rem(12px) rem(16px);
+                            box-shadow: 0px rem(-5px) rem(5px) 0px #00000030;
+                            z-index: 2;
+
+                            .numpad {
+                                display: flex;
+                                flex-flow: row wrap;
+                                flex-grow: 1;
+                                width: unset;
+
+                                br {
+                                    display: none;
+                                }
+
+                                button {
+                                    &.input-button,
+                                    &.mode-button {
+                                        float: none;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        flex: 1 0 25%;
+                                        height: unset;
+                                        width: unset;
+                                        box-sizing: border-box;
+                                        padding: unset;
+                                    }
+
+                                    &.mode-button {
+                                        font-size: rem(10px);
+                                    }
+                                }
+                            }
+                        }
+
+                        // Payment buttons
+                        .payment-buttons {
+                            display: flex;
+                            flex-direction: row;
+                            padding: 0;
+                            width: unset;
+                            float: none;
+                            flex-basis: 15%;
+                            
+                            .button {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;    
+                                font-size: rem(12px);
+                                font-weight: 600;
+                                line-height: rem(20px);
+                                border-left: none;
+                                flex-grow: 1;
+                                flex-basis: 50%;
+                                border-radius: unset;
+                                border-width: rem(1px);
+
+                                .fa {
+                                    display: block;
+                                    margin: 0 auto;
+                                    position: relative;
+                                    left: unset;
+                                    top: unset;
+                                    width: rem(24px);
+                                    height: rem(24px);
+                                    line-height: rem(24px);
+                                    border-radius: rem(16px);
+                                    font-size: rem(16px);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                /*** RECEIPT SCREEN ***/
+                .receipt-screen.screen {
+                    // Screen Wrapper
+                    .screen-content {
+                        display: flex;
+                        flex-direction: column;
+
+                        // Top navigation bar
+                        .top-content {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding-inline: rem(12px);
+                            box-shadow: 0px rem(5px) rem(5px) 0px #00000030;
+                            position: relative;
+                            border-bottom: unset;
+                            min-height: rem(64px);
+                            z-index: 10;
+
+                            h1 {
+                                margin: 0;
+                                font-size: rem(18px);
+                            }
+
+                            span.button.next {
+                                margin: 0;
+                                font-size: rem(14px);
+                                font-weight: 600;
+                                position: relative;
+                            }
+                        }
+
+                        // Receipt
+                        .centered-content {
+                            position: relative;
+                            right: unset;
+                            top: unset;
+                            bottom: unset;
+                            left: unset;
+                            border-right: none;
+                            border-left: none;
+
+                            .pos-receipt-container {
+                                .pos-receipt {
+                                    margin: rem(10px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .popups {
+                .modal-dialog {
+                    padding: rem(2px);
+
+                    .popup {
+                        width: 90%;
+                        height: 75%;
+
+                        .button {
+                            width: unset;
+                            padding-inline: rem(12px);
+                        }
+                    }
+                }
+            }
+
+            .loader {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                
+                .loader-feedback {
+                    padding-inline: rem(30px);
+                    width: unset;
+                    height: unset;
+                    margin: unset;
+                    left: unset;
+                    top: unset;
+                    position: relative;
+
+                    h1.message {
+                        font-weight: 600;
+                        font-size: 1rem;
+                    }
+
+                    .progressbar {
+                        height: rem(4px);
+                        border-radius: rem(4px);
+
+                        >.progress {
+                            border-radius: rem(4px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
