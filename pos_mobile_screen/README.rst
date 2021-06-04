@@ -53,19 +53,13 @@ Authors
 ~~~~~~~
 
 * Ganar Ganar
-* IT Projects LLC
 
 Contributors
 ~~~~~~~~~~~~
 
 * `Ganar Ganar <https://ganargan.ar/>`_:
 
-  * Lucas Soto <lsoto@ganargan.ar>
-  * Leandro Ramírez <lramirez@ganargan.ar>
-
-* IT Projects LLC:
-
-  * Dinar Gabbasov
+  * Daniel Libonati <dlibonati@ganargan.ar>
 
 Maintainers
 ~~~~~~~~~~~
@@ -76,13 +70,13 @@ This module is maintained by Ganar Ganar.
    :alt: Ganar Ganar
    :target: https://ganargan.ar
 
-.. |maintainer-sotolucas| image:: https://github.com/sotolucas.png?size=40px
-    :target: https://github.com/sotolucas
+.. |maintainer-daniellibonati| image:: https://github.com/daniellibonati.png?size=40px
+    :target: https://github.com/daniellibonati
     :alt: sotolucas
 
 Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-sotolucas| 
+|maintainer-daniellibonati| 
 
 This module is part of the `ganarganar/pos <https://github.com/ganarganar/pos/tree/13.0/pos_mobile>`_ project on GitHub.
 
