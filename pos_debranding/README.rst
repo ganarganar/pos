@@ -62,6 +62,7 @@ Contributors
 
   * Lucas Soto <lsoto@ganargan.ar>
   * Leandro Ramírez <lramirez@ganargan.ar>
+  * Daniel Libonati <dlibonati@ganargan.ar>
 
 * IT Projects LLC:
 
