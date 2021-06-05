@@ -15,6 +15,7 @@ Point Of Sale Debranding
 |badge1| |badge2| |badge3|
 
 This module overrides POS tab name and POS logo with the Ganar Ganar's logo.
+Also changes default POS colors to Ganar Ganar's colors.
 
 **Table of contents**
 
